@@ -1,6 +1,17 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 :root {
   --accent-color: #2196f3;
   --text-color-dark-theme: #ffffff;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 a {
@@ -36,7 +47,7 @@ body {
   font-weight: bold;
   font-size: 36px;
   text-align: center;
-  line-height: 1.166;
+  line-height: 1.167;
   letter-spacing: 0.03em;
   color: #212121;
 }
@@ -212,8 +223,12 @@ header .e-mail {
 
 /* section head */
 
-.head {
-  background-image: linear-gradient(
+.hero {
+    padding-bottom: 47px;
+}
+
+.hero-container {
+    background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
@@ -240,7 +255,7 @@ header .e-mail {
   font-style: normal;
   font-weight: 900;
   font-size: 44px;
-  line-height: 1.363;
+  line-height: 1.364;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-color-dark-theme);
@@ -339,7 +354,8 @@ header .e-mail {
 }
 
 .feature {
-  padding-top: 94px;
+  padding-top: 47px;
+  padding-bottom: 47px;
 }
 
 .feature .bg-icon {
@@ -364,6 +380,7 @@ header .e-mail {
 
 .feature li {
   max-width: 270px;
+  height: 251px;
 }
 
 .feature h5 {
@@ -373,15 +390,14 @@ header .e-mail {
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
-  line-height: 1.142;
+  line-height: 1.143;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #212121;
 }
 
 .feature p {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0 0 0 0;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -394,8 +410,8 @@ header .e-mail {
 /* section activity*/
 
 .activity {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 47px;
+  padding-bottom: 47px;
 }
 
 .activity > div > ul {
@@ -432,6 +448,11 @@ header .e-mail {
 /* section team */
 
 .team {
+    padding-top: 47px;
+    padding-bottom: 47px;
+}
+
+.team-container {
   max-width: 1600px;
   padding-top: 94px;
   padding-bottom: 94px;
@@ -441,6 +462,9 @@ header .e-mail {
 }
 
 .team ul {
+    margin-right: auto;
+    margin-left: auto;
+  width: 1170px;
   display: flex;
   justify-content: space-between;
 }
@@ -451,7 +475,6 @@ header .e-mail {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
   max-width: 270px;
-  height: 428px;
   text-align: center;
 }
 
@@ -459,7 +482,7 @@ header .e-mail {
   margin-bottom: 30px;
 }
 
-.team b {
+.team-name {
   display: inline-block;
   margin-top: 0px;
   margin-bottom: 10px;
@@ -467,52 +490,55 @@ header .e-mail {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.187;
+  line-height: 1.1875;
   text-align: center;
   letter-spacing: 0.03em;
   color: #212121;
 }
 
-.team p {
+.team-position {
   margin-top: 0px;
   margin-bottom: 0px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  line-height: 1.187;
+  line-height: 1.1875;
   letter-spacing: 0.03em;
   color: #757575;
 }
 
 .team svg {
   width: 20px;
-  height: 20px;
+  max-height: 20px;
   fill: #afb1b8;
 }
 
-.hover-icon:hover {
+.hover-icon:hover,
+.hover-icon:focus {
   border-radius: 50%;
   background-color: var(--accent-color);
+  transition-timing-function: var(--timing-function);
 }
 
-.hover-icon:hover .hover-svg {
+.hover-icon:hover .hover-svg,
+.hover-icon:focus .hover-svg {
   fill: var(--text-color-dark-theme);
+  transition-timing-function: var(--timing-function);
 }
 
 .team li > a {
   display: inline-block;
   width: 44px;
-  height: 90px;
 }
 
 .team li > a > div {
   display: inline-block;
   justify-content: center;
   max-width: 44px;
-  max-height: 44px;
+  max-width: 44px;
   padding-top: 12px;
-  padding-bottom: 12px;
+  padding-bottom: 9px;
   padding-right: 12px;
   padding-left: 12px;
   margin-top: 16px;
@@ -522,7 +548,7 @@ header .e-mail {
 /* section our-clients */
 
 .our-clients {
-  padding-top: 94px;
+  padding-top: 47px;
   padding-bottom: 94px;
 }
 
@@ -541,12 +567,16 @@ header .e-mail {
   border-radius: 4px;
 }
 
-.clients li > a > div:hover {
+.clients li > a > div:hover,
+.clients li > a > div:focus {
   border-color: var(--accent-color);
+  transition-timing-function: var(--timing-function);
 }
 
-.clients li > a > div:hover svg {
+.clients li > a > div:hover svg,
+.clients li > a > div:focus svg {
   fill: var(--accent-color);
+  transition-timing-function: var(--timing-function);
 }
 
 .clients svg {
@@ -617,6 +647,7 @@ header .e-mail {
 .filters button:hover {
   color: var(--text-color-dark-theme);
   background: var(--accent-color);
+  transition-timing-function: var(--timing-function);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -646,10 +677,12 @@ header .e-mail {
   max-width: 370px;
 }
 
-.works li:hover {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+.works li:hover,
+.works li:focus {
+    transition-timing-function: var(--timing-function);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .works span {
@@ -714,8 +747,10 @@ header .e-mail {
   transition: transform 250ms ease;
 }
 
-.works-hidden:hover .works-overlay {
+.works-hidden:hover .works-overlay,
+.works-hidden:focus .works-overlay {
   transform: translatey(0%);
+  transition-timing-function: var(--timing-function);
 }
 
 /* footer */
@@ -737,17 +772,7 @@ footer .logo-studio {
   color: white;
 }
 
-address > ul > li > a {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 1.714;
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.adress {
+.footer-adres {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -773,20 +798,20 @@ footer .container {
   min-width: 1200px;
 }
 
-footer .adress,
-.e-mail {
+.footer-adres,
+.footer-mail {
   margin-bottom: 9px;
 }
 
-footer .e-mail {
+.footer-mail,
+.footer-tel {
+  display: inline-block;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 1.714;
   letter-spacing: 0.03em;
-  display: inline-block;
-  margin-bottom: 9px;
   color: rgba(255, 255, 255, 0.6);
 }
 
