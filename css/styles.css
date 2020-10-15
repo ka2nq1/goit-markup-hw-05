@@ -28,7 +28,7 @@ ul {
 }
 
 .container {
-  max-width: 1200px;
+  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin-right: auto;
@@ -70,6 +70,10 @@ header .container,
 nav {
   display: flex;
   align-items: center;
+}
+
+nav {
+  margin-right: auto;
 }
 
 .header-logo {
@@ -136,7 +140,6 @@ header .logo-studio {
 
 .contacts {
   display: flex;
-  margin-left: 305px;
   min-width: 303px;
 }
 
@@ -303,18 +306,137 @@ header .e-mail {
 }
 
 .modal {
-  display: flex;
-  justify-content: flex-end;
   position: absolute;
   width: 528px;
-  height: 581px;
   left: 50%;
   top: 50%;
+  padding: 40px;
   transform: translate(-50%, -50%);
   background: var(--text-color-dark-theme);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+}
+
+.form-title {
+  margin-bottom: 12px;
+  margin-top: 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #212121;
+}
+
+.inputs .form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs .form-field:nth-child(-n+3) {
+  margin-bottom: 10px;
+}
+
+.form-field label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  color: #757575;
+  margin-bottom: 4px;
+}
+
+.form-field input {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: 0;
+  padding: 10px 12px;
+}
+
+.form-field input:hover,
+.form-field input:focus,
+.form-field textarea:hover,
+.form-field textarea:focus {
+  border: 1px solid #2196F3;
+  fill: #2196F3;
+}
+
+textarea{
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  min-width: 448px;
+  height: 120px;
+  outline: 0;
+  padding: 12px 16px;
+}
+
+textarea::placeholder {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.inputs {
+  margin-bottom: 20px;
+}
+
+.form-agreement {
+  margin-bottom: 30px;
+}
+
+.form-agreement label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.7142;
+  letter-spacing: 0.03em;
+  color: #757575;
+  margin-left: 8.38px;
+}
+
+.form-agreement label > a {
+  text-decoration-line: underline;
+  color: #2196F3;
+}
+
+.form-btn {
+  margin-right: auto;
+  margin-left: auto;
+  background: #2196F3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  outline: 0;
+  border: 0;
+  padding: 10px 55px;
+}
+
+.form-btn:hover,
+.form-btn:focus {
+  background: #188CE8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
 .modal svg {
@@ -327,11 +449,15 @@ header .e-mail {
 }
 
 .close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 0 0 0;
-  margin: 8px 8px 0 0;
+  margin-top: 8px;
+  margin-right: 8px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -341,9 +467,10 @@ header .e-mail {
   outline: none;
 }
 
-.close-btn:hover {
-  border: 1px solid red;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+.close-btn:hover,
+.close-btn:focus {
+  fill: #2196F3;
+  cursor: pointer;
 }
 
 /* section feature */
@@ -402,7 +529,7 @@ header .e-mail {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 1.714;
+  line-height: 1.7142;
   letter-spacing: 0.03em;
   color: #757575;
 }
@@ -411,15 +538,16 @@ header .e-mail {
 
 .activity {
   padding-top: 47px;
-  padding-bottom: 47px;
+  padding-bottom: 94px;
 }
 
-.activity > div > ul {
+.activity-list {
   display: flex;
   justify-content: space-between;
 }
 
-.activity > div > ul > li {
+.activity-item {
+  position: relative;;
   max-width: 370px;
 }
 
@@ -427,7 +555,7 @@ header .e-mail {
   position: absolute;
   width: 370px;
   height: 70px;
-  top: 1426px;
+  bottom: 1%;
   background: rgba(47, 48, 58, 0.8);
 }
 
@@ -448,17 +576,15 @@ header .e-mail {
 /* section team */
 
 .team {
-    padding-top: 47px;
-    padding-bottom: 47px;
-}
-
-.team-container {
   max-width: 1600px;
   padding-top: 94px;
   padding-bottom: 94px;
   background-color: #f5f4fa;
   margin-left: auto;
   margin-right: auto;
+}
+
+.team-container {
 }
 
 .team ul {
@@ -548,7 +674,7 @@ header .e-mail {
 /* section our-clients */
 
 .our-clients {
-  padding-top: 47px;
+  padding-top: 94px;
   padding-bottom: 94px;
 }
 
@@ -755,6 +881,21 @@ header .e-mail {
 
 /* footer */
 
+footer {
+    display: flex;
+  background-color: #2f303a;
+  justify-content: start;
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+footer .container {
+    display: flex;
+}
+
 .footer-logo {
   display: inline-block;
   padding-bottom: 20px;
@@ -782,20 +923,13 @@ footer .logo-studio {
   color: var(--text-color-dark-theme);
 }
 
-footer {
-  display: flex;
-  background-color: #2f303a;
-  justify-content: start;
-  max-width: 1600px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 60px;
-  padding-bottom: 60px;
+.footer-container-adres,
+.footer-container-social {
+    width: 270px;
 }
 
-footer .container {
-  display: flex;
-  min-width: 1200px;
+.footer-container-adres {
+    margin-right: 70px;
 }
 
 .footer-adres,
@@ -823,6 +957,8 @@ footer .container {
   line-height: 1.142;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  margin-top: 12px;
+  margin-bottom: 20px;
   color: var(--text-color-dark-theme);
 }
 
@@ -848,16 +984,8 @@ footer .container {
   fill: var(--text-color-dark-theme);
 }
 
-.social p {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
 .social {
-  margin-left: 85px;
-  margin-top: 12px;
   width: 206px;
-  height: 80px;
 }
 
 .social-link {

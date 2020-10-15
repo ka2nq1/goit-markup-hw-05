@@ -34,7 +34,33 @@
         <div class="modal">
             <button data-modal-close type="button" class="close-btn">
                 <svg class="svg-close"><use href="./img/svg/sprite.svg#icon-close"></use></svg>
-            </button>                        
+            </button>
+            <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
+            <form class="js-speaker-form">
+                <div class="inputs">
+                  <div class="form-field">
+                      <label for="name">Имя</label>
+                      <input type="text" name="user-name" id="name">
+                  </div>
+                  <div class="form-field">
+                      <label for="tel">Телефон</label>
+                      <input type="tel" name="tel" id="tel">
+                  </div>
+                  <div class="form-field">
+                      <label for="mail">Почта</label>
+                      <input type="email" name="mail" id="mail">
+                  </div>
+                  <div class="form-field">
+                      <label for="comment">Комментарий</label>
+                      <textarea name="comment" id="comment" rows="" placeholder="Введите текст"></textarea>
+                  </div>
+                </div>
+                <div class="form-agreement">
+                    <input type="checkbox" name="agreement" id="agreement">
+                    <label for="agreement">Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a></label>
+                </div>
+                <button class="form-btn" type="submit">Отправить</button>
+            </form>                        
         </div>               
     </div>            
     <main>
@@ -81,20 +107,20 @@
         <section class="activity">
             <div class="container">
                 <h2 class="title">Чем мы занимаемся</h2>
-                <ul>
-                    <li>
+                <ul class="activity-list">
+                    <li class="activity-item">
                         <img src="./img/img.png" alt="Печатает на клавиатуре">
                         <div class="activity-label">
                             <p>Десктопные приложения</p>
                         </div>
                     </li>
-                    <li>
+                    <li class="activity-item">
                         <img src="./img/img2.png" alt="Телефон в руке">
                         <div class="activity-label">
                             <p>Мобильные приложения</p>
                         </div>
                     </li>
-                    <li>
+                    <li class="activity-item">
                         <img src="./img/img3.png" alt="Работает с планшетом">
                         <div class="activity-label">
                             <p>Дизайнерские решения</p>
@@ -104,7 +130,7 @@
             </div>            
         </section>
         <section class="team">
-            <div class="team-container">
+            <div class="container">
                 <h2 class="title">Наша команда</h2>
                 <ul>
                     <li>
@@ -267,7 +293,7 @@
     </main>
     <footer>
         <div class="container">
-            <div>
+            <div class="footer-container-adres">
                 <a href="/index.html" class="footer-logo">Web<span class="logo-studio">Studio</span></a>
             <addres>
                 <ul>
@@ -277,7 +303,7 @@
                 </ul>
             </addres>
             </div>
-            <div>
+            <div class="footer-container-social">
                 <ul class="social">
                     <li><p>присоединяйтесь</p></li>
                     <li class="social-link">
